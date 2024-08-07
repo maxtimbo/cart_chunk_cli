@@ -1,6 +1,6 @@
 # cart_chunk_cli
 
-An command-line interface for [python_cart_chunk](https://github.com/maxtimbo/python_cart_chunk/tree/main).
+A command-line interface for [python_cart_chunk](https://github.com/maxtimbo/python_cart_chunk/tree/main).
 
 > [!NOTE]
 > Only `title`, `artist`, `cart`, and `category` are currently supported.
