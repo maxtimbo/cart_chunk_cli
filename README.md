@@ -11,6 +11,7 @@ Clone this repository and install using pip:
 
 ```
 git clone https://github.com/maxtimbo/cart_chunk_cli.git
+cd cart_chunk_cli
 pip3 install .
 ```
 
