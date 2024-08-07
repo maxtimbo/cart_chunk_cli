@@ -16,7 +16,7 @@ pip3 install .
 
 ## Usage
 
-If the filename is already $${\color{red}CAT}$$$${\color{blue}CART}$$.wav then you can use the `--from_filename` flag:
+If the filename is already $${\color{red}CAT}$$ $${\color{blue}CART}$$.wav then you can use the `--from_filename` flag:
 
 ```
 $ cart_chunk_cli NEW1234.wav --from_filename
