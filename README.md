@@ -10,7 +10,7 @@ An command-line interface for [python_cart_chunk](https://github.com/maxtimbo/py
 Clone this repository and install using pip:
 
 ```
-git clone
+git clone https://github.com/maxtimbo/cart_chunk_cli.git
 pip3 install .
 ```
 
