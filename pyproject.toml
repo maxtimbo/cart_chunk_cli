@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cart_chunk_cli"
+version = "0.1.a1"
+dependencies = [
+    "python_cart_chunk>=0.0.1b7"
+]
+requires-python = ">=3.10"
+authors = [
+    {name = "Tim Finley", email = "tim.finley24@gmail.com"},
+]
+maintainers = [
+    {name = "Tim Finley", email = "tim.finley24@gmail.com"},
+]
+description = "CLI interface for python_cart_chunk library"
+readme = "README.md"
+license = {file = "LICENSE"}
+
+[project.scripts]
+cart_chunk_cli = "cart_chunk_cli.cart_chunk_cli:cli"
