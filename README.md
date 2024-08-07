@@ -35,3 +35,17 @@ or
 ```
 $ cart_chunk_cli NEW1234.wav --title "News from TV" --artist "John McNewsFace"
 ```
+
+```
+$ cart_chunk_cli --help
+Usage: cart_chunk_cli [OPTIONS] FILENAME
+
+Options:
+  -v, --verbose    enable verbose mode
+  --from_filename  get cat/cart from filename
+  --cat TEXT       set category
+  --cart TEXT      set cart
+  --artist TEXT    set artist
+  --title TEXT     set title
+  --help           Show this message and exit.
+```
