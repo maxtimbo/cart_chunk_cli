@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cart_chunk_cli"
-version = "0.1.a1"
+version = "0.1.a2"
 dependencies = [
     "python_cart_chunk>=0.0.1b7"
 ]
