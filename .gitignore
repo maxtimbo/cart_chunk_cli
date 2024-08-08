@@ -161,3 +161,4 @@ cython_debug/
 
 # Ignore wav files
 *.wav
+*.wav_COPY
