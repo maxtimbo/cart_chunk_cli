@@ -3,7 +3,7 @@ import shutil
 import pprint
 from pathlib import Path
 
-from cart_chunk import CartChunk, NewCart
+from cart_chunk import CartChunk, CartTouch, NewCart
 
 
 class VerbosePrint:
@@ -17,6 +17,7 @@ class VerbosePrint:
 @click.command()
 @click.option('-v', '--verbose', is_flag=True, help='enable verbose mode')
 @click.option('-a', '--analyse', is_flag=True, help='get audio header information')
+@click.option('--cart_chunk/--scott_chunk', default=True, help='write file with scott header')
 @click.option('--from_filename', is_flag=True, help='get cat/cart from filename')
 @click.option('--cat', help="set category")
 @click.option('--cart', help="set cart")
@@ -26,6 +27,7 @@ class VerbosePrint:
 def cli(filename,
         verbose,
         analyse,
+        cart_chunk,
         from_filename,
         cat,
         cart,
@@ -36,7 +38,10 @@ def cli(filename,
     ffile = Path(filename).resolve()
     copy = Path(ffile.parent, ffile.name + "_COPY")
 
-    wav = CartChunk(ffile)
+    if cart_chunk:
+        wav = CartTouch(ffile)
+    else:
+        wav = CartChunk(ffile)
 
     if analyse:
         pp = pprint.PrettyPrinter(indent=4)
