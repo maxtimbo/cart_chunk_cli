@@ -3,7 +3,7 @@ import shutil
 import pprint
 from pathlib import Path
 
-from cart_chunk import CartChunk, CartTouch, NewCart
+from cart_chunk import CartChunk, NewCart
 
 
 class VerbosePrint:
@@ -38,10 +38,7 @@ def cli(filename,
     ffile = Path(filename).resolve()
     copy = Path(ffile.parent, ffile.name + "_COPY")
 
-    if cart_chunk:
-        wav = CartTouch(ffile)
-    else:
-        wav = CartChunk(ffile)
+    wav = CartChunk(ffile)
 
     if analyse:
         pp = pprint.PrettyPrinter(indent=4)
@@ -55,6 +52,7 @@ def cli(filename,
         pp.pprint(wav.data_meta)
         click.echo(f'Bext: {wav.is_bext}')
         click.echo(f'Scott: {wav.is_scott}')
+        click.echo(f'Cart: {wav.is_cart}')
         click.echo(f'Header size: {wav.riff_data["size"] - wav.data_meta["datasize"]}')
     else:
         new_wav = NewCart(copy)
@@ -95,5 +93,8 @@ def cli(filename,
         for tag in tags:
             msg.vprint(f"{tag[0]}:\t\t{tag[1]}")
 
-        new_file = wav.write_copy(new_wav)
+        if cart_chunk:
+            new_file = wav.write_cart(new_wav)
+        else:
+            new_file = wav.write_copy(new_wav)
         msg.vprint(f"file saved as {new_file}")
